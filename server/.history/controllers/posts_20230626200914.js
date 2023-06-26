@@ -57,19 +57,7 @@ export const likePost = async(req,res)=>{
         const  post = await Post.findById(id);
         const isLiked = post.likes.get(userId);
 
-        if(isLiked){
-            post.likes.delete(userId)
-        }else{
-            post.likes.ser(userId,true)
-        }
-        const updatedPost = await Post.findByIdAndUpdate(
-            id,{
-                likes:post.likes
-            },
-            {new:true},
-        );
-    res.status(200).json(updatedPost)
-
+        
 
 
     } catch (error) {

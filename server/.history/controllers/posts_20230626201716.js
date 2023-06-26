@@ -66,9 +66,9 @@ export const likePost = async(req,res)=>{
             id,{
                 likes:post.likes
             },
-            {new:true},
+            {new:true}
         );
-    res.status(200).json(updatedPost)
+    res
 
 
 
